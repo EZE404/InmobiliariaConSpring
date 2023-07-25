@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+    <head>
+        <title th:text="#{owner.list.headline}" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="d-flex flex-wrap mb-4">
+                <h1 th:text="#{owner.list.headline}" class="flex-grow-1" />
+                <div>
+                    <a th:href="@{/owners/add}" th:text="#{owner.list.createNew}" class="btn btn-primary ms-2" />
+                </div>
+            </div>
+            <div th:if="${owners.empty}" th:text="#{owner.list.empty}" />
+            <div th:if="${!owners.empty}" class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th th:text="#{owner.id.label}" scope="col" />
+                            <th><!-- --></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="owner : ${owners}">
+                            <td th:text="${owner.id}" />
+                            <td>
+                                <div class="float-end text-nowrap">
+                                    <a th:href="@{/owners/edit/{id}(id=${owner.id})}" th:text="#{owner.list.edit}" class="btn btn-sm btn-info" />
+                                    <form th:action="@{/owners/delete/{id}(id=${owner.id})}"
+                                            th:data-confirm-message="#{delete.confirm}" method="post" class="js-submit-confirm d-inline">
+                                        <button th:text="#{owner.list.delete}" type="submit" class="btn btn-sm btn-danger" />
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
