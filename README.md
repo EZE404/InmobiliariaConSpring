@@ -1,46 +1,10 @@
-# MyApp
+# Ejemplo de Inmobiliaria utilizando Spring.
+##  Base del proyecto generada con Bootify.io.
 
-This app was created with Bootify.io - tips on working with the code [can be found here](https://bootify.io/next-steps/).
-Feel free to contact us for further questions.
+- Requiere una base de datos configurada en properties.
+- Se trabajaron herencias tanto en el código como en la base de datos, para ahorar código y carga en la db.
+- Se utiliza lombok y jakarta.
+- Debito a cambios en el dominio, el font-end está incompleto para especializaciones de usuario.
+- RestAPI funciona completamente.
 
-## Development
-
-Update your local database connection in `application.yml` or create your own `application-local.yml` file to override
-settings for development.
-
-During development it is recommended to use the profile `local`. In IntelliJ `-Dspring.profiles.active=local` can be
-added in the VM options of the Run Configuration after enabling this property in "Modify options".
-
-Lombok must be supported by your IDE. For IntelliJ install the Lombok plugin and enable annotation processing -
-[learn more](https://bootify.io/next-steps/spring-boot-with-lombok.html).
-
-After starting the application it is accessible under `localhost:8080`.
-
-## Build
-
-The application can be built using the following command:
-
-```
-mvnw clean package
-```
-
-Start your application with the following command - here with the profile `production`:
-
-```
-java -Dspring.profiles.active=production -jar ./target/my-app-0.0.1-SNAPSHOT.jar
-```
-
-If required, a Docker image can be created with the Spring Boot plugin. Add `SPRING_PROFILES_ACTIVE=production` as
-environment variable when running the container.
-
-```
-mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=io.bootify/my-app
-```
-
-## Further readings
-
-* [Maven docs](https://maven.apache.org/guides/index.html)  
-* [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
-* [Spring Data JPA reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)  
-* [Thymeleaf docs](https://www.thymeleaf.org/documentation.html)  
-* [Bootstrap docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)  
+# Solo es un programa juguete para poner en práctica conceptos aprendidos de SpringBoot.
